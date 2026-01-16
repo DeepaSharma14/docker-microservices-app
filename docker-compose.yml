@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  user-service:
+    build: ./user-services
+    ports:
+      - "8081:8081"
+
+  order-service:
+    build: ./order-services
+    ports:
+      - "8082:8082"
+    depends_on:
+      - user-service
